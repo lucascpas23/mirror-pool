@@ -6,7 +6,7 @@
 
 Rust-only infrastructure for independent Solana users to join a cohort, verify membership, and execute participant-owned actions inside the same bounded slot window.
 
-[![CI](https://github.com/lucascpas23/mirror-pool/actions/workflows/ci.yml/badge.svg?branch=codex%2Fprivacy-through-noise)](https://github.com/lucascpas23/mirror-pool/actions/workflows/ci.yml)
+[![CI](https://github.com/lucascpas23/mirror-pool/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lucascpas23/mirror-pool/actions/workflows/ci.yml)
 [![Rust 1.89](https://img.shields.io/badge/Rust-1.89-dea584?logo=rust)](rust-toolchain.toml)
 [![Solana 4.1.1](https://img.shields.io/badge/Solana-4.1.1-14f195?logo=solana&logoColor=white)](docs/dependencies.md)
 [![Tests 27](https://img.shields.io/badge/tests-27%20passed-2ea043)](AUDIT.md)
@@ -131,7 +131,6 @@ SQLite is bundled through the Rust dependency. Anchor, Node.js, TypeScript, Pyth
 ```bash
 git clone https://github.com/lucascpas23/mirror-pool.git
 cd mirror-pool
-git switch codex/privacy-through-noise
 
 cargo build --workspace --all-features
 cargo test --workspace --all-features
