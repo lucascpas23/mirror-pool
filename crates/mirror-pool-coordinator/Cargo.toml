@@ -1,0 +1,33 @@
+[package]
+name = "mirror-pool-coordinator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+axum.workspace = true
+chrono.workspace = true
+hex.workspace = true
+mirror-pool-core = { version = "0.1.0", path = "../mirror-pool-core" }
+mirror-pool-crypto = { version = "0.1.0", path = "../mirror-pool-crypto" }
+mirror-pool-merkle = { version = "0.1.0", path = "../mirror-pool-merkle" }
+mirror-pool-store = { version = "0.1.0", path = "../mirror-pool-store" }
+serde.workspace = true
+serde_json.workspace = true
+solana-client.workspace = true
+solana-commitment-config.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
+uuid.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+ed25519-dalek.workspace = true
+rand_chacha.workspace = true
