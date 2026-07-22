@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Isolated local validator validation results</title>
+  <desc id="desc">Twenty-five tickets accepted and included, twenty-two actions simulated, five transactions submitted and confirmed, one explicit local dropout, and zero failed transactions.</desc>
+  <rect width="1000" height="500" rx="20" fill="#0d1117"/>
+  <text x="50" y="62" fill="#f0f6fc" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Real isolated-validator run</text>
+  <text x="50" y="94" fill="#8b949e" font-family="system-ui, sans-serif" font-size="16">Fresh Agave 4.1.1 validator · bounded local cohort · independently signed transactions</text>
+
+  <g font-family="system-ui, sans-serif" font-size="16">
+    <text x="50" y="148" fill="#c9d1d9">Accepted tickets</text>
+    <rect x="250" y="126" width="650" height="30" rx="6" fill="#238636"/>
+    <text x="920" y="148" fill="#7ee787" font-weight="700">25</text>
+
+    <text x="50" y="203" fill="#c9d1d9">Included tickets</text>
+    <rect x="250" y="181" width="650" height="30" rx="6" fill="#2ea043"/>
+    <text x="920" y="203" fill="#7ee787" font-weight="700">25</text>
+
+    <text x="50" y="258" fill="#c9d1d9">Simulated actions</text>
+    <rect x="250" y="236" width="572" height="30" rx="6" fill="#1f6feb"/>
+    <text x="842" y="258" fill="#79c0ff" font-weight="700">22</text>
+
+    <text x="50" y="313" fill="#c9d1d9">Submitted transactions</text>
+    <rect x="250" y="291" width="130" height="30" rx="6" fill="#8957e5"/>
+    <text x="400" y="313" fill="#d2a8ff" font-weight="700">5</text>
+
+    <text x="50" y="368" fill="#c9d1d9">Confirmed transactions</text>
+    <rect x="250" y="346" width="130" height="30" rx="6" fill="#a371f7"/>
+    <text x="400" y="368" fill="#d2a8ff" font-weight="700">5</text>
+  </g>
+
+  <line x1="50" y1="409" x2="950" y2="409" stroke="#30363d"/>
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="190" y="450" fill="#f0f6fc" font-size="22" font-weight="700">0</text>
+    <text x="190" y="475" fill="#8b949e" font-size="14">transaction failures</text>
+    <text x="500" y="450" fill="#f0f6fc" font-size="22" font-weight="700">4 slots</text>
+    <text x="500" y="475" fill="#8b949e" font-size="14">observed execution spread</text>
+    <text x="810" y="450" fill="#f0f6fc" font-size="22" font-weight="700">1</text>
+    <text x="810" y="475" fill="#8b949e" font-size="14">explicit local dropout</text>
+  </g>
+</svg>

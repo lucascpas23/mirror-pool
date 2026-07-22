@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="570" viewBox="0 0 1000 570" role="img" aria-labelledby="title desc">
+  <title id="title">Feature-ablation effective anonymity set</title>
+  <desc id="desc">For the same deterministic one-thousand-participant scenario, the control effective set is 724. Removing timing reduces it to 400, instruction shape remains 724, fee behavior reduces it to 416, funding graph reduces it to 221, amount bucket reduces it to 547, and historical behavior remains 724.</desc>
+  <rect width="1000" height="570" rx="20" fill="#0d1117"/>
+  <text x="50" y="62" fill="#f0f6fc" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Same-seed feature ablation</text>
+  <text x="50" y="94" fill="#8b949e" font-family="system-ui, sans-serif" font-size="16">Effective anonymity set · 1,000 announced / 908 observed · higher is favorable</text>
+
+  <g font-family="system-ui, sans-serif" font-size="15">
+    <text x="50" y="148" fill="#c9d1d9">All features (control)</text>
+    <rect x="250" y="127" width="560" height="27" rx="5" fill="#2ea043"/>
+    <text x="827" y="147" fill="#7ee787" font-weight="700">724</text>
+
+    <text x="50" y="203" fill="#c9d1d9">Without timing</text>
+    <rect x="250" y="182" width="309" height="27" rx="5" fill="#1f6feb"/>
+    <text x="576" y="202" fill="#79c0ff" font-weight="700">400</text>
+
+    <text x="50" y="258" fill="#c9d1d9">Without instruction shape</text>
+    <rect x="250" y="237" width="560" height="27" rx="5" fill="#2ea043"/>
+    <text x="827" y="257" fill="#7ee787" font-weight="700">724</text>
+
+    <text x="50" y="313" fill="#c9d1d9">Without fee behavior</text>
+    <rect x="250" y="292" width="322" height="27" rx="5" fill="#1f6feb"/>
+    <text x="589" y="312" fill="#79c0ff" font-weight="700">416</text>
+
+    <text x="50" y="368" fill="#c9d1d9">Without funding graph</text>
+    <rect x="250" y="347" width="171" height="27" rx="5" fill="#da3633"/>
+    <text x="438" y="367" fill="#ff7b72" font-weight="700">221</text>
+
+    <text x="50" y="423" fill="#c9d1d9">Without amount bucket</text>
+    <rect x="250" y="402" width="423" height="27" rx="5" fill="#8957e5"/>
+    <text x="690" y="422" fill="#d2a8ff" font-weight="700">547</text>
+
+    <text x="50" y="478" fill="#c9d1d9">Without history</text>
+    <rect x="250" y="457" width="560" height="27" rx="5" fill="#2ea043"/>
+    <text x="827" y="477" fill="#7ee787" font-weight="700">724</text>
+  </g>
+
+  <line x1="250" y1="509" x2="810" y2="509" stroke="#30363d"/>
+  <g fill="#8b949e" font-family="system-ui, sans-serif" font-size="13" text-anchor="middle">
+    <text x="250" y="532">0</text>
+    <text x="390" y="532">181</text>
+    <text x="530" y="532">362</text>
+    <text x="670" y="532">543</text>
+    <text x="810" y="532">724</text>
+  </g>
+  <text x="50" y="554" fill="#8b949e" font-family="system-ui, sans-serif" font-size="13">Synthetic observer evidence; this is not a real-world anonymity guarantee.</text>
+</svg>
