@@ -1,0 +1,31 @@
+[package]
+name = "mirror-pool-client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+borsh.workspace = true
+ed25519-dalek.workspace = true
+mirror-pool-actions = { version = "0.1.0", path = "../mirror-pool-actions" }
+mirror-pool-core = { version = "0.1.0", path = "../mirror-pool-core" }
+mirror-pool-crypto = { version = "0.1.0", path = "../mirror-pool-crypto" }
+mirror-pool-merkle = { version = "0.1.0", path = "../mirror-pool-merkle" }
+mirror-pool-program = { version = "0.1.0", path = "../../programs/mirror-pool-program", features = ["no-entrypoint"] }
+rand.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+solana-client.workspace = true
+solana-commitment-config.workspace = true
+solana-instruction.workspace = true
+solana-keypair.workspace = true
+solana-pubkey.workspace = true
+solana-signer.workspace = true
+solana-system-interface.workspace = true
+solana-transaction.workspace = true
+thiserror.workspace = true
+url.workspace = true
+
+[lints]
+workspace = true
