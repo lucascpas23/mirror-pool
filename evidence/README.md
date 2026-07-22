@@ -1,0 +1,3 @@
+# Evidence
+
+Run `cargo xtask evaluate --output evidence/generated` and `cargo xtask verify-evidence --directory evidence/generated`. Generated evidence is ignored until deliberately reviewed. It contains deterministic synthetic metrics, checksums, pool/round counts, and explicit local submitted/confirmed/spread fields, never raw databases, wallets, ticket secrets, home paths, or full logs. Standalone evaluation records zero local transactions; `cargo xtask full-demo` generates and verifies a temporary manifest containing its real local confirmations. Virtual participants and observed synthetic executions are labeled; no transaction is called confirmed unless local RPC confirmation occurred.

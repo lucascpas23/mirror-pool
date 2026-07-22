@@ -1,0 +1,12 @@
+{
+  "evaluation_csv_blake3": "bca8e073375cba32f4bfca9afb1be1c8fec2c5543fb4c8dd86af1c82f5b17c0c",
+  "evaluation_json_blake3": "fec1c32023254260bbee6aebd0a3119f7161eaf0bde2a45a137cb784d86a10b6",
+  "evaluation_md_blake3": "26bd8b70c4c0d79edf08c86d601ded1943ec836e5592e9d8065e77b897760db2",
+  "local_confirmed_transactions": 0,
+  "local_execution_spread_slots": 0,
+  "local_submitted_transactions": 0,
+  "pool_count": 1,
+  "round_count": 120,
+  "scenario_count": 127,
+  "version": 1
+}

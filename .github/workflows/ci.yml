@@ -1,0 +1,63 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.89.0
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
+      - run: cargo test --workspace --all-features
+      - run: cargo test --doc --workspace
+      - run: cargo build --workspace --all-features --release
+      - run: git diff --check
+
+  protocol-and-privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.89.0
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo test -p mirror-pool-core -p mirror-pool-crypto -p mirror-pool-merkle -p mirror-pool-store -p mirror-pool-coordinator -p mirror-pool-actions -p mirror-pool-program
+      - run: cargo run -p mirror-pool-cli -- evaluate --participants 100 --seed 42 --output /tmp/evaluation.json
+      - run: cargo xtask evaluate --output /tmp/evidence
+      - run: cargo xtask verify-evidence --directory /tmp/evidence
+
+  supply-chain-and-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.89.0
+      - uses: taiki-e/install-action@cargo-audit
+      - uses: taiki-e/install-action@cargo-deny
+      - run: cargo metadata --locked --no-deps --format-version 1 > /dev/null
+      - run: cargo audit
+      - run: cargo deny check
+      - name: Reject product languages and generated secrets
+        run: |
+          test -z "$(find . -path ./.git -prune -o -path ./target -prune -o -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.js' -o -name '*.py' -o -name '*.keypair.json' -o -name '*.db' -o -name '.env' \) -print)"
+          ! rg -n --hidden -g '!.git/**' -g '!Cargo.lock' -g '!ci.yml' '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|\[[0-9]+(,[0-9]+){31,}\]|seed phrase\s*[:=]|passphrase\s*[:=])' .
+
+  local-solana:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.89.0
+      - uses: Swatinem/rust-cache@v2
+      - name: Install pinned Agave CLI
+        run: |
+          sh -c "$(curl --proto '=https' --tlsv1.2 -sSfL https://release.anza.xyz/v4.1.1/install)"
+          echo "$HOME/.local/share/solana/install/active_release/bin" >> "$GITHUB_PATH"
+      - name: Real isolated localnet cohort
+        run: cargo xtask full-demo
