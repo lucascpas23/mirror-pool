@@ -1,0 +1,5 @@
+scenario_version = 1
+longitudinal_periods = [1, 10]
+feature_ablation = ["timing", "instruction_shape", "fee_behavior", "funding_graph", "amount_bucket", "historical_behavior"]
+interpret_high_auc_as_unfavorable = true
+interpret_low_entropy_as_unfavorable = true

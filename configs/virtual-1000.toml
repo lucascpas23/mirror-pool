@@ -1,0 +1,8 @@
+scenario_version = 1
+seeds = [7, 42, 99]
+participant_counts = [10, 100, 1000]
+rounds = 120
+execution_window_slots = [4, 20]
+dropout_rates = [0.05, 0.35]
+backends = ["transparent_registry", "merkle_cohort"]
+release_strategies = ["fixed_slot", "narrow_window", "randomized_within_window", "latency_aware"]

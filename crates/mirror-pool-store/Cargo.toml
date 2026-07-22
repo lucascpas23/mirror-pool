@@ -1,0 +1,23 @@
+[package]
+name = "mirror-pool-store"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+chrono.workspace = true
+mirror-pool-core = { version = "0.1.0", path = "../mirror-pool-core" }
+mirror-pool-crypto = { version = "0.1.0", path = "../mirror-pool-crypto" }
+mirror-pool-merkle = { version = "0.1.0", path = "../mirror-pool-merkle" }
+rusqlite.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+ed25519-dalek.workspace = true
+rand_chacha.workspace = true
+tempfile = "3.20.0"
+
+[lints]
+workspace = true

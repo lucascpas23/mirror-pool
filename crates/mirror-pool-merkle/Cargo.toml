@@ -1,0 +1,17 @@
+[package]
+name = "mirror-pool-merkle"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+mirror-pool-core = { version = "0.1.0", path = "../mirror-pool-core" }
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

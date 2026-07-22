@@ -1,0 +1,80 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/mirror-pool-core",
+  "crates/mirror-pool-crypto",
+  "crates/mirror-pool-merkle",
+  "crates/mirror-pool-actions",
+  "crates/mirror-pool-simulator",
+  "crates/mirror-pool-store",
+  "crates/mirror-pool-coordinator",
+  "crates/mirror-pool-client",
+  "crates/mirror-pool-cli",
+  "programs/mirror-pool-program",
+  "xtask",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.89"
+repository = "https://github.com/solanabr/mirror-pool"
+
+[workspace.dependencies]
+anyhow = "1.0.98"
+async-trait = "0.1.88"
+axum = { version = "0.8.4", features = ["http1", "json", "tokio"] }
+base64 = "0.22.1"
+blake3 = "1.8.2"
+borsh = { version = "1.5.7", features = ["derive"] }
+chrono = { version = "0.4.41", default-features = false, features = ["clock", "serde"] }
+clap = { version = "4.5.40", features = ["derive", "env"] }
+csv = "1.3.1"
+ed25519-dalek = { version = "2.2.0", features = ["rand_core", "serde"] }
+hex = "0.4.3"
+http = "1.3.1"
+proptest = "1.7.0"
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+reqwest = { version = "0.12.20", default-features = false, features = ["json", "rustls-tls"] }
+rusqlite = { version = "=0.36.0", features = ["bundled", "chrono"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+sha2 = "0.10.9"
+solana-program = "=4.0.0"
+solana-client = "=4.0.0"
+solana-commitment-config = "=3.1.1"
+solana-instruction = "=3.3.0"
+solana-keypair = "=3.1.2"
+solana-pubkey = "=4.1.0"
+solana-signer = "=3.0.0"
+solana-system-interface = { version = "=3.1.0", features = ["bincode"] }
+solana-transaction = { version = "=3.1.0", features = ["bincode"] }
+subtle = "2.6.1"
+thiserror = "2.0.12"
+tokio = { version = "1.45.1", features = ["macros", "rt-multi-thread", "signal", "time", "net", "sync"] }
+toml = "0.8.23"
+tower = { version = "0.5.2", features = ["limit", "timeout", "util"] }
+tower-http = { version = "0.6.6", features = ["timeout"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter", "json"] }
+url = { version = "2.5.4", features = ["serde"] }
+uuid = { version = "1.16.0", features = ["v4", "serde"] }
+zeroize = { version = "1.8.1", features = ["derive"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "allow"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+overflow-checks = true
+panic = "abort"
+strip = "symbols"

@@ -1,0 +1,16 @@
+version = 1
+rpc_url = "http://127.0.0.1:8899"
+coordinator_url = "http://127.0.0.1:8787"
+privacy_backend = "merkle_cohort"
+minimum_participants = 10
+maximum_participants = 50
+registration_slots = 100
+release_delay_slots = 10
+execution_window_slots = 4
+dry_run = true
+sending_enabled = false
+loopback_only = true
+simulation_required = true
+max_concurrent_sends = 4
+max_sends_per_round = 25
+allowed_templates = ["memo-v1", "compute-budget-shape-v1"]

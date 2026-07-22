@@ -1,0 +1,23 @@
+[package]
+name = "mirror-pool-actions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+public-cluster-execution = []
+
+[dependencies]
+async-trait.workspace = true
+mirror-pool-core = { version = "0.1.0", path = "../mirror-pool-core" }
+serde.workspace = true
+thiserror.workspace = true
+url.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

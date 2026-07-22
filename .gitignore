@@ -1,0 +1,11 @@
+/target/
+/.mirror-pool/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.keypair.json
+validator-ledger/
+.env
+.DS_Store
+evidence/generated/
